@@ -1,14 +1,13 @@
 8. Create a job definition file for Apache web server for UpStart.
 ------------------------------------------------------------------
 
-
-Създаваме файл /etc/init/apache2.conf със следното съдържание:
+Създаваме файл /etc/init/apache2.conf със следното съдържание (Debian Wheezy, upstart 1.6.1):
 
 	# apache2 upstart job
 	#
 	# This service maintains an apache2 http web server
 
-	description     "Apache2 Web Server"
+	description     "Apache2 Web Server - Upstart job for Debian Wheezy"
 	author          "Bozhin Zafirov <bozhin@abv.bg>"
 
 	start on (runlevel [2345]
@@ -44,4 +43,31 @@
 	exec /usr/sbin/apache2 -k start
 
 
-Променливите в този вариант са подходящи за upstart job файл за Debian (Wheezy) със upstart 1.6.1. 
+
+Следното е вариант за CentOS 6.4 (upstart 0.6.5):
+
+	# apache2 upstart job
+	#
+	# This service maintains an apache2 http web server
+	
+	description     "Apache2 Web Server - CentOS 6.4"
+	author          "Bozhin Zafirov <bozhin@abv.bg>"
+	
+	start on runlevel [2345]
+	stop on starting rc RUNLEVEL=[016]
+	emits httpd
+	
+	# monitor service 
+	respawn
+	respawn limit 2 5
+	
+	kill timeout 60
+	
+	# pre-start, similar to start in apache2ctl
+	pre-start script
+		mkdir -p /var/run/httpd
+	end script
+
+	# run apache2 daemon
+	expect fork
+	exec /usr/sbin/httpd -k start
