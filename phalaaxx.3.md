@@ -1,4 +1,4 @@
-7. List all opend files using only the /proc fs.
+7. List all opened files using only the /proc fs.
 ------------------------------------------------
 
 	ls -l /proc/*/fd 2>/dev/null
