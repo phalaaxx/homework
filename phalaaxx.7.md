@@ -24,4 +24,4 @@
 	echo "import agentx" | python
 
 Липсата на съобщение за грешка означава, че съществува модул с име agentx и се зарежда успешно.
-Резултата от изпълнението на горепосочените команди води до създаването на този пакет за Debian: [python-agentx_0.7-1_all.deb](https://github.com/phalaaxx/homework/blob/master/python-agentx_0.7-1_all.deb "python-agentx_0.7-1_all.deb")
+Резултата от изпълнението на горепосочените команди води до създаването на този пакет за Debian: [python-agentx_0.7-1_all.deb](https://github.com/phalaaxx/homework/blob/master/python-agentx_0.7-1_all.deb?raw=true "python-agentx_0.7-1_all.deb")
