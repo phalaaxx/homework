@@ -5,11 +5,11 @@
 
 	http://sourceforge.net/projects/python-agentx/
 
-Необходимо за създаването на модул за python е да имаме инсталирани следните пакети:
+Необходимо за създаването на модул за python е да бъдат инсталирани следните пакети:
 
 	apt-get install devscripts python-all-dev python-stdeb
 
-След като бъде изтеглен модула от sf.net, изпълняваме следните команди:
+След като бъде изтеглен модула от sf.net (файл с име python-agentx_r7.tar.gz), изпълняваме следните команди:
 
 	py2dsc -m 'Bozhin Zafirov <bozhin@abv.bg>' python-agentx_r7.tar.gz
 	cd deb_dist/agentx-0.7
