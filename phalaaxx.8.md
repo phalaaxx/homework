@@ -36,7 +36,7 @@ named.conf
 	};
 
 	;
-	; forward zones (not shown here)
+	; forward zones (like for deck17.com, not shown here)
 	;
 
 
